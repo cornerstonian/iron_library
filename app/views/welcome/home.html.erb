@@ -1,13 +1,12 @@
-<div class="page-header">
-  <h1>Books List</h1>
-</div>
+<h1>Welcome#home</h1>
+<p>Find me in app/views/welcome/home.html.erb</p>
 
 
 <ul>
   <% @books.each do |book| %>
   <li><%= book.title %></li>
   <li><%= book.author.full_name %></li>
-  <li><%= image_tag book.photo_url, size: "350x500" %></li><br>
+  <li><%= book.photo_url %></li>
 
 <%end %>
 </ul>
