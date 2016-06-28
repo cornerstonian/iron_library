@@ -32,10 +32,10 @@ Book.create(title: "Steve Jobs", photo_url: 'http://buff.ly/28YdZ2z', price: '40
 Book.create(title: "Einstein: His Life and Universe", photo_url: 'http://buff.ly/28ZEuXO', price: '35', author_id: 2)
 
 
-Book.create(title: "The Great Divorce", photo_url: '', price: '10', author_id: 3)
+Book.create(title: "The Great Divorce", photo_url: 'http://buff.ly/298TTGc', price: '10', author_id: 3)
 
 Book.create(title: "Screwtape Letters", photo_url: 'http://buff.ly/291Oxgv', price: '10', author_id: 3)
 
 Book.create(title: "The Big Payback", photo_url: 'http://buff.ly/28YeMkd', price: '17', author_id: 4 )
 
-Book.create(title: "Signature in the Cell: DNA and the Evidence for Intelligent Design", photo_url: '', price: '23', author_id: 5)
+Book.create(title: "Signature in the Cell: DNA and the Evidence for Intelligent Design", photo_url: 'http://buff.ly/291mIkq', price: '23', author_id: 5)
