@@ -7,7 +7,14 @@ class Author < ActiveRecord::Base
 
      def full_name
        name = [self.first_name, self.last_name]
-       name.join(', ')
+       name.join(' ')
      end
+
+
+    def last_name_first
+      name = [self.last_name, self.first_name]
+      name.join(', ')
+    end
+
 
 end
