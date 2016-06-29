@@ -4,9 +4,9 @@
 </div>
 
 
-<% @books.in_groups_of(3, false) do |book| %>
+<% @books.in_groups_of(3, false) do |books| %>
   <div class="row">
-    <% @books.each do |book| %>
+    <% books.each do |book| %>
       <div class="col-xs-4">
         <h3><%= link_to book.title, book_path(id: book.id) %></h3>
         <div class="thumbnail">
