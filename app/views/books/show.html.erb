@@ -1,2 +1,28 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+
+<div class="page-header">
+  <h1><%= @book.title %></h1>
+   <%= link_to 'Edit This Title', edit_book_path %>
+</div>
+
+<div class="row">
+  <div class="col-xs-8">
+    <% link_to 'Other Titles by This Author', author_path() %>
+    <div class="thumbnail text-center">
+      <%= image_tag @book.photo_url, class: "large" %>
+    </div>
+  </div>
+
+  <div class="col-xs-4">
+
+    <div class="well">
+
+        <ul class="list-group">
+          <li class="list-group-item"><strong> <%= number_to_currency @book.price %> </strong>
+
+          <%= link_to 'Purchase', books_path, class: "btn btn-lg btn-block btn-success" %>
+        </ul>
+
+      </div>
+
+  </div>
+</div>
