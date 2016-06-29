@@ -50,5 +50,12 @@ class BooksController < ApplicationController
     end
 
 
+    def delete
+      @book = Book.find_by id: params[:id]
+      @book.destroy
+        redirect_to root_path, notice: "Book Deleted From The Collection"
+    end
+
+
 
 end

@@ -1,7 +1,9 @@
 
 <div class="page-header">
   <h1><%= @book.title %></h1>
-   <%= link_to 'Edit This Title', edit_book_path %>
+   <%= link_to 'Edit This Title|', edit_book_path %>
+   <%= link_to 'Delete This Book', delete_book_path, method: :delete%>
+
 </div>
 
 <div class="row">

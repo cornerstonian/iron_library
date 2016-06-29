@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get   'books/:id/edit' => 'books#edit', as: :edit_book
 
   get   'books' => 'books#index', as: :books
-  post  'book' => 'books#create', as: :create_book
+  post  'books' => 'books#create', as: :create_book
   patch 'books/:id' => 'books#update', as: :update_book
-  delete 'books/:id' => 'books#delete'
+  delete 'books/:id' => 'books#delete', as: :delete_book
 
 
   get   'authors/:id' => 'authors#show', as: :author
