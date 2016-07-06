@@ -5,6 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+vois = User.create! username: "vois", password: "12345678"
+jenny = User.create! username: "jenny", password: "12345678"
+
+
 Author.create(first_name: "Ryan", last_name: "Holiday", bio: "Ryan Holiday (born June 16, 1987) is an American author, marketer, and entrepreneur. He is a media strategist, the former Director of Marketing for American Apparel and a media columnist and editor-at-large for the New York Observer")
 
 Author.create(first_name: "Walter", last_name: "Issacson", bio: "Walter Isaacson, the CEO of the Aspen Institute, has been chairman of CNN and the managing editor of Time magazine. He is the author of The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution; Steve Jobs; Einstein: His Life and Universe; Benjamin Franklin: An American Life; and Kissinger: A Biography, and the coauthor of The Wise Men: Six Friends and the World They Made. He lives in Washington, DC. Follow him on Twitter")

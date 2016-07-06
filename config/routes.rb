@@ -10,9 +10,23 @@ Rails.application.routes.draw do
   patch 'books/:id' => 'books#update', as: :update_book
   delete 'books/:id' => 'books#delete', as: :delete_book
 
-
   get   'authors/:id' => 'authors#show', as: :author
   get   'authors' => 'authors#index',  as: :authors
+
+  get 'sign_in' => 'sessions#new', as: :sign_in
+  post 'sign_in' => 'sessions#create'
+  delete 'sign_in' => 'sessions#delete'
+
+  get 'registration' => 'users#new', as: :new_user
+  post 'registration' => 'users#create', as: :create_user
+
+  get 'welcome/homepage'
+  get 'users/index'
+  get 'users/new'
+
+
+
+
 
 
 
