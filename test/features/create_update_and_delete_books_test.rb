@@ -8,9 +8,11 @@ class CreateUpdateAndDeleteBooksTest < Capybara::Rails::TestCase
     Author.create first_name: "Jane", last_name: "Fonda", bio: "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, making it look like readable English."
     Author.create first_name: "Miles", last_name: "Munroe", bio: "There are many variations of passages of Lorem Ipsum available"
     Book.create(title: "Ghost In The Wires", photo_url: 'http://buff.ly/29ao1SS', price: '21' )
+
   end
 
   test "Can view author detail" do
+
     visit root_path
     click_link "Authors"
     click_link "George Foreman"
@@ -18,14 +20,30 @@ class CreateUpdateAndDeleteBooksTest < Capybara::Rails::TestCase
   end
 
   test "can view book detail" do
-      visit root_path
+    user = User.create! username: "cornerstonian", password: "87654321"
+
+    visit root_path
+    click_link "Ghost In The Wires"
+    click_link "Log In"
+    save_and_open_page
+    fill_in "Username", with: "cornerstonian"
+    fill_in "Password", with: "87654321"
+    click_button "Sign-in"
+
       click_link "Books"
       click_link "Ghost In The Wires"
       assert_content page, "21"
   end
 
   test "Can add a book" do
+
     visit root_path
+    user = User.create! username: "cornerstonian", password: "87654321"
+    click_link "Log In"
+    fill_in "Username", with: "cornerstonian"
+    fill_in "Password", with: "87654321"
+    click_button "Sign-in"
+
     click_link "Add A Book"
 
     fill_in "Title", with: "Ghost In The Wires"

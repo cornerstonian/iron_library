@@ -1,5 +1,12 @@
 class BooksController < ApplicationController
 
+  before_action except: :index do
+    if @current_user.nil?
+      redirect_to sign_in_path, alert: "Please sign in or sign up!"
+    end
+  end
+
+
    def index
       @books = Book.all
       @authors = Author.all
