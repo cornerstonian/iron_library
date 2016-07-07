@@ -20,10 +20,12 @@
 
         <ul class="list-group">
           <li class="list-group-item"><strong> <%= number_to_currency @book.price %> </strong>
-
-          <%= link_to 'Purchase', books_path, class: "btn btn-lg btn-block btn-success" %>
-          <%= link_to 'Rent', books_path, class: "btn btn-lg btn-block btn-warning" %>
-
+            <% if @book.inventory >= 1 %>
+          <%= link_to 'Checkout', check_out_path(id: @book.id), method: :post, class: "btn btn-lg btn-block btn-success" %>
+           <% else %>
+              <div>Out Of Stock</div>
+          <%= link_to 'Return This Book', check_in_path(id: @book.id), method: :delete, class: "btn btn-lg btn-block btn-warning" %>
+            <% end %>
         </ul>
 
       </div>
