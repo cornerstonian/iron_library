@@ -25,12 +25,16 @@ Rails.application.routes.draw do
   get 'users/new'
 
 
+  post 'books/:id' => 'books#check_out', as: :check_out
+  delete 'books/:id' => 'books#check_in', as: :check_in
+
+  get    'api/books' => 'api/books#index', as: :api_books
+  get    'api/books/:id' => 'api/books#show', as: :api_book
+  post   'api/books' => 'api/books#check_out'
+  delete 'api/books/:id' => 'api/books#check_in'
 
 
-
-
-
-  # The priority is based upon order of creation: first created -> highest priority.
+   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
